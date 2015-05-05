@@ -1,0 +1,35 @@
+{
+  "name": "simple-store",
+  "version": "1.0.0",
+  "description": "A simple localStorage abstraction",
+  "main": "./dist/node/index.js",
+  "config": {
+    "namespace": "simpleStorage"
+  },
+  "keywords": [],
+  "scripts": {
+    "postInstall": "npm run build",
+    "test": "mocha --reporter dot --recursive -r setup-referee-sinon/globals test --compilers js:babel/register",
+    "bundle": "npm run build-node && npm run build-browser",
+    "build": "rm -rf ./dist && mkdir -p dist/browser dist/node && npm install && npm run bundle",
+    "build-node": "NODE_ENV=production node_modules/.bin/babel index.js --out-file dist/node/index.js && node_modules/.bin/babel src --out-dir dist/node/src",
+    "build-browser": "NODE_ENV=production browserify index.js -t [ babelify --sourceMapRelative src ] --insert-global-vars global -s $npm_package_config_namespace > dist/browser/$npm_package_config_namespace.max.js && uglifyjs dist/browser/$npm_package_config_namespace.max.js -cm > dist/browser/$npm_package_config_namespace.js"
+  },
+  "author": "Julian Hollmann <hollmann@uxebu.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nerdbeere/simple-store.git"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "mocha": "^2.1.0",
+    "referee": "^1.1.1",
+    "referee-sinon": "^1.0.2",
+    "setup-referee-sinon": "^0.2.0",
+    "sinon": "^1.12.2",
+    "uglify-js": "^2.4.17",
+    "babel": "^5.2.13",
+    "babelify": "^6.0.2"
+  }
+}
