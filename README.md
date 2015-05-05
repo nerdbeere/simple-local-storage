@@ -1,5 +1,45 @@
-# SimpleStore
+# Simple Local Storage
 
+A simple localStorage abstraction to get and set strings, arrays and objects from and to localStorage.
+
+**Warning:** This is currently only working in the browser because localStorage is not implemented in nodejs/iojs.
+
+## Installation
+
+`npm install --save simple-local-storage`
+
+## Api
+
+### `store.get(key)`
+
+#### Parameters:
+
+Name | Type | Description
+-----|------|------------
+key | `string` | The key of the item
+
+Retrieve an item from the store.
+
+### `store.set(key, value)`
+
+#### Parameters:
+
+Name | Type | Description
+-----|------|------------
+key | `string` | The key of the item
+value | `array`, `object`, `string`, `number` | The actual value you want to save in the store
+
+Save an item to the store.
+
+### `store.remove(key)`
+
+#### Parameters:
+
+Name | Type | Description
+-----|------|------------
+key | `string` | The key of the item
+
+Remove an item from the store.
 
 ## License
 
