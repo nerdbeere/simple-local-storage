@@ -1,4 +1,4 @@
-import SimpleStore from './src/simple-store.js';
+import SimpleStore from './src/simple-local-storage.js';
 
 export default function SimpleStoreFactory(options) {
   options = options || {};

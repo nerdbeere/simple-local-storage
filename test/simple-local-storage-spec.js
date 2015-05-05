@@ -1,6 +1,6 @@
 'use strict';
 
-var SimpleStore = require('../src/simple-store');
+var SimpleStore = require('../src/simple-local-storage');
 
 describe('SimpleStore', function() {
 

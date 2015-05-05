@@ -1,10 +1,10 @@
 {
-  "name": "simple-store",
+  "name": "simple-local-storage",
   "version": "1.0.0",
   "description": "A simple localStorage abstraction",
   "main": "./dist/node/index.js",
   "config": {
-    "namespace": "simpleStorage"
+    "namespace": "simpleLocalStorage"
   },
   "keywords": [],
   "scripts": {
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nerdbeere/simple-store.git"
+    "url": "https://github.com/nerdbeere/simple-local-storage.git"
   },
   "devDependencies": {
     "browserify": "^9.0.3",
@@ -31,5 +31,12 @@
     "uglify-js": "^2.4.17",
     "babel": "^5.2.13",
     "babelify": "^6.0.2"
+  },
+  "bugs": {
+    "url": "https://github.com/nerdbeere/simple-local-storage/issues"
+  },
+  "homepage": "https://github.com/nerdbeere/simple-local-storage",
+  "directories": {
+    "test": "test"
   }
 }
