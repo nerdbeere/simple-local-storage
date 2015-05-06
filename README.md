@@ -41,6 +41,10 @@ key | `string` | The key of the item
 
 Remove an item from the store.
 
+### `store.clear()`
+
+Remove all items from the store.
+
 ## License
 
 The MIT License (MIT)
