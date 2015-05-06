@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "scripts": {
-    "postInstall": "npm run build",
+    "prepublish": "npm run build",
     "test": "mocha --reporter dot --recursive -r setup-referee-sinon/globals test --compilers js:babel/register",
     "bundle": "npm run build-node && npm run build-browser",
     "build": "rm -rf ./dist && mkdir -p dist/browser dist/node && npm install && npm run bundle",
