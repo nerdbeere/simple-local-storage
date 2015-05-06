@@ -11,7 +11,7 @@
     "prepublish": "npm run build",
     "test": "mocha --reporter dot --recursive -r setup-referee-sinon/globals test --compilers js:babel/register",
     "bundle": "npm run build-node && npm run build-browser",
-    "build": "rm -rf ./dist && mkdir -p dist/browser dist/node && npm install && npm run bundle",
+    "build": "rm -rf ./dist && mkdir -p dist/browser dist/node && npm run bundle",
     "build-node": "NODE_ENV=production node_modules/.bin/babel index.js --out-file dist/node/index.js && node_modules/.bin/babel src --out-dir dist/node/src",
     "build-browser": "NODE_ENV=production browserify index.js -t [ babelify --sourceMapRelative src ] --insert-global-vars global -s $npm_package_config_namespace > dist/browser/$npm_package_config_namespace.max.js && uglifyjs dist/browser/$npm_package_config_namespace.max.js -cm > dist/browser/$npm_package_config_namespace.js"
   },
