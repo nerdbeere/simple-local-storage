@@ -1,6 +1,6 @@
 {
   "name": "simple-local-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple localStorage abstraction",
   "main": "./dist/node/index.js",
   "config": {
