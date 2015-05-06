@@ -25,6 +25,10 @@ export default class SimpleStore {
     this._localStorage.removeItem(key);
   }
 
+  clear() {
+    this._localStorage.clear();
+  }
+
   _isObjectOrArray(value) {
     return typeof value === 'object';
   }

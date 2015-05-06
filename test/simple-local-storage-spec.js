@@ -10,7 +10,8 @@ describe('SimpleStore', function() {
     localStorageMock = {
       setItem: sinon.stub(),
       getItem: sinon.stub(),
-      removeItem: sinon.stub()
+      removeItem: sinon.stub(),
+      clear: sinon.stub()
     };
     store = new SimpleStore(localStorageMock);
   });
@@ -49,6 +50,11 @@ describe('SimpleStore', function() {
     var key = 'key';
     store.remove(key);
     expect(localStorageMock.removeItem.lastCall.args[0]).toBe(key);
-  })
+  });
+
+  it('clears all items from the store', function() {
+    store.clear();
+    expect(localStorageMock.clear).toHaveBeenCalled();
+  });
 
 });
